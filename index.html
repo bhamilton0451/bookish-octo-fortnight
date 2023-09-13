@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Javascript - DOM</title>
+  <meta name="author" content="Bryan Montgomery Hamilton">
+  <meta name="keywords" content="200021401, web, javascript">
+  <meta name="description" content="Atividade sobre javascript - DOM">
+
+  <script>
+    function imc(altura, peso) {
+      result = peso / (altura * altura)
+
+      if (result <= 16.90) {
+        return "Muito abaixo do peso."
+      }
+      if (result <= 18.40) {
+        return "Abaixo do peso."
+      }
+      if (result <= 24.90) {
+        return "Peso normal."
+      }
+      if (result <= 29.90) {
+        return "Acima do peso."
+      } return "Obesidade."
+    }
+
+    function editTexto(a, b) {
+      document.getElementById("paragraph_1").innerHTML = "Categoria de IMC: " + imc(a, b)
+    }
+  </script>
+</head>
+
+<body>
+
+  <label for="texto1">Altura (em M):</label>
+  <input type="text" id="a"><br>
+
+  <label for="texto2">Peso (em Kg):</label>
+  <input type="text" id="b"><br>
+
+  <button onclick="editTexto(
+    document.getElementById('a').value, 
+    document.getElementById('b').value
+  )">
+    Enviar
+  </button>
+
+  <br>
+  <p id="paragraph_1"></p>
+</body>
+
+</html>
